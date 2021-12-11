@@ -9,14 +9,14 @@ body {
 
 a {
     cursor: pointer;
-    color: #8340BB;
+    color: #45859c;
     text-decoration: none;
     transition: all 0.2s ease;
     border-bottom: 1px solid white;
 }
 
 a:hover {
-    border-bottom: 1px solid #8340BB;
+    border-bottom: 1px solid #45859c;
 }
 
 footer {
@@ -256,7 +256,7 @@ button:hover {
 }
 
 .svg {
-  fill: #8340BB;
+  fill: #45859c;
   color: #fff;
   position: absolute;
   top: 0;
