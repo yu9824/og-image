@@ -1,10 +1,31 @@
 
 # og-image
 
+## How to build
+You can build on docker container.
+
+### Build an image
+```bash
+sh docker/build.sh
+```
+
+### Run a container
+```bash
+sh docker/run.sh
+```
+
+### Debug
+```bash
+vercel dev
+```
+
+### Deploy
+```bash
+vercel
+```
+
 forked from 
 [vercel/og-image](https://github.com/vercel/og-image)
-
-
 
 > # [Open Graph Image as a Service](https://og-image.vercel.app)
 > 
