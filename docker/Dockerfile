@@ -11,9 +11,6 @@ RUN apt-get update && apt-get install -y vim
 # Install vercel
 RUN npm install -g vercel
 
-# after build
-RUN echo "vercel dev" >> ~/.bash_profile
-
 # Add user
 ARG user_name
 RUN useradd -m ${user_name}
