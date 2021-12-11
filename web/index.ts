@@ -197,7 +197,7 @@ const App = (_: any, state: AppState, setState: SetState) => {
         pattern = 'none',
         md = true,
         text = '**OGP画像**自動生成ツール',
-        overlay = 'https://og-image.eyemono.moe/OGP_overlay.png',
+        overlay = 'https://og-image.yu9824.com/OGP_overlay.png',
         textColor = '#3b3b38',
         textStrongColor = '#45859c',
         showToast = false,
