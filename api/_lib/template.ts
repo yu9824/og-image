@@ -157,7 +157,7 @@ function getCss(fontSize: string, textColor: string, textStrongColor: string) {
         position: absolute;
         display: flex;
         flex-direction: column;
-        width: 938px;
+        width: 600px;
         height: 600px;
         top: 0;
         bottom: 0;
