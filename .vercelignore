@@ -4,3 +4,5 @@ api/dist
 public/dist
 CONTRIBUTING.md
 README.md
+docker
+.DS_Store
