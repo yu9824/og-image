@@ -5,10 +5,13 @@ import { Pattern, ParsedRequest } from './types';
 export function parseRequest(req: IncomingMessage) {
     console.log('HTTP ' + req.url);
     const { pathname, query } = parse(req.url || '/', true);
-    const { fontSize, pattern, md, textColor, textStrongColor, overlay } = (query || {});
+    const { fontSize, width, pattern, md, textColor, textStrongColor, overlay } = (query || {});
 
     if (Array.isArray(fontSize)) {
         throw new Error('Expected a single fontSize');
+    }
+    if (Array.isArray(width)) {
+        throw new Error('Expected a single width');
     }
     if (Array.isArray(pattern)) {
         throw new Error('Expected a single pattern');
@@ -40,7 +43,8 @@ export function parseRequest(req: IncomingMessage) {
         text: decodeURIComponent(text),
         pattern: ['none', 'cross', 'polka'].includes(pattern || 'cross') ? pattern as Pattern : 'cross',
         md: md === '1' || md === 'true',
-        fontSize: fontSize || '96px',
+        fontSize: fontSize || '50px',
+        width: width || '600px',
         textColor: decodeURIComponent(textColor || '#000000'),
         textStrongColor: decodeURIComponent(textStrongColor || '#8340BB'),
         overlay: decodeURIComponent(overlay || '')

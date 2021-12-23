@@ -162,6 +162,12 @@ const fontSizeOptions: DropdownOption[] = Array
     .filter(n => n > 0)
     .map(n => ({ text: n + 'px', value: n + 'px' }));
 
+const widthOptions: DropdownOption[] = Array
+    .from({ length: 13 })
+    .map((_, i) => i * 100)
+    .filter(n => n > 400)
+    .map(n => ({ text: n + 'px', value: n + 'px' }));
+
 const markdownOptions: DropdownOption[] = [
     { text: 'Plain Text', value: '0' },
     { text: 'Markdown', value: '1' },
@@ -193,7 +199,8 @@ const App = (_: any, state: AppState, setState: SetState) => {
     };
     const {
         fileType = 'png',
-        fontSize = '75px',
+        fontSize = '50px',
+        width = '600px',
         pattern = 'none',
         md = true,
         text = '**OGP画像**自動生成ツール',
@@ -211,6 +218,7 @@ const App = (_: any, state: AppState, setState: SetState) => {
     url.searchParams.append('pattern', pattern);
     url.searchParams.append('md', mdValue);
     url.searchParams.append('fontSize', fontSize);
+    url.searchParams.append('width', width);
     url.searchParams.append('textColor', textColor);
     url.searchParams.append('textStrongColor', textStrongColor);
     url.searchParams.append('overlay', overlay)
@@ -242,6 +250,14 @@ const App = (_: any, state: AppState, setState: SetState) => {
                         options: fontSizeOptions,
                         value: fontSize,
                         onchange: (val: string) => setLoadingState({ fontSize: val })
+                    })
+                }),
+                H(Field, {
+                    label: 'Width',
+                    input: H(Dropdown, {
+                        options: widthOptions,
+                        value: width,
+                        onchange: (val: string) => setLoadingState({ width: val })
                     })
                 }),
                 H(Field, {

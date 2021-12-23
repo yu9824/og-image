@@ -11,7 +11,7 @@ const rglr = readFileSync(`${__dirname}/../_fonts/Inter-Regular.woff2`).toString
 const bold = readFileSync(`${__dirname}/../_fonts/Inter-Bold.woff2`).toString('base64');
 const mono = readFileSync(`${__dirname}/../_fonts/Vera-Mono.woff2`).toString('base64');
 
-function getCss(fontSize: string, textColor: string, textStrongColor: string) {
+function getCss(fontSize: string, width: string, textColor: string, textStrongColor: string) {
     return `
     @import url('https://fonts.googleapis.com/css?family=M+PLUS+1p');
     @import url('https://cdn.jsdelivr.net/npm/yakuhanjp@3.4.1/dist/css/yakuhanjp_s.min.css');
@@ -157,7 +157,7 @@ function getCss(fontSize: string, textColor: string, textStrongColor: string) {
         position: absolute;
         display: flex;
         flex-direction: column;
-        width: 600px;
+        width: ${sanitizeHtml(width)};
         height: 600px;
         top: 0;
         bottom: 0;
@@ -170,7 +170,7 @@ function getCss(fontSize: string, textColor: string, textStrongColor: string) {
 }
 
 export function getHtml(parsedReq: ParsedRequest) {
-    const { text, pattern, md, fontSize, textColor, textStrongColor, overlay } = parsedReq;
+    const { text, pattern, md, fontSize, width, textColor, textStrongColor, overlay } = parsedReq;
     return `<!DOCTYPE html>
 <html>
     <head>
@@ -183,7 +183,7 @@ export function getHtml(parsedReq: ParsedRequest) {
     <title>Generated Image</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
-        ${getCss(fontSize, textColor, textStrongColor)}
+        ${getCss(fontSize, width, textColor, textStrongColor)}
     </style>
     <script>
         document.addEventListener("DOMContentLoaded", function() {
