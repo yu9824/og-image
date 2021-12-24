@@ -7,9 +7,11 @@ const twemoji = require('twemoji');
 const twOptions = { folder: 'svg', ext: '.svg' };
 const emojify = (text: string) => twemoji.parse(text, twOptions);
 
-const rglr = readFileSync(`${__dirname}/../_fonts/Inter-Regular.woff2`).toString('base64');
-const bold = readFileSync(`${__dirname}/../_fonts/Inter-Bold.woff2`).toString('base64');
+// Customize fonts.
+const rglr = readFileSync(`${__dirname}/../_fonts/MyWebSubsetFont-Regular.woff2`).toString('base64');
+const bold = readFileSync(`${__dirname}/../_fonts/MyWebSubsetFont-Medium.woff2`).toString('base64');
 const mono = readFileSync(`${__dirname}/../_fonts/Vera-Mono.woff2`).toString('base64');
+
 
 function getCss(fontSize: string, width: string, textColor: string, textStrongColor: string) {
     return `
@@ -17,14 +19,14 @@ function getCss(fontSize: string, width: string, textColor: string, textStrongCo
     @import url('https://cdn.jsdelivr.net/npm/yakuhanjp@3.4.1/dist/css/yakuhanjp_s.min.css');
     
     @font-face {
-        font-family: 'Inter';
+        font-family: 'MyWebSubsetFont';
         font-style:  normal;
         font-weight: normal;
         src: url(data:font/woff2;charset=utf-8;base64,${rglr}) format('woff2');
     }
 
     @font-face {
-        font-family: 'Inter';
+        font-family: 'MyWebSubsetFont';
         font-style:  normal;
         font-weight: bold;
         src: url(data:font/woff2;charset=utf-8;base64,${bold}) format('woff2');
@@ -149,7 +151,7 @@ function getCss(fontSize: string, width: string, textColor: string, textStrongCo
     }
     
     .heading {
-        font-family: YakuHanJPs, 'M PLUS 1p', 'Inter', sans-serif;
+        font-family: YakuHanJPs, 'MyWebSubsetFont', 'M PLUS 1p', 'Inter', sans-serif;
         font-size: ${sanitizeHtml(fontSize)};
         font-style: normal;
         color: ${sanitizeHtml(textColor)};
