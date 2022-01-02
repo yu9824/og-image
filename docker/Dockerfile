@@ -21,4 +21,4 @@ ARG user_home_dir=/home/${user_name}
 WORKDIR ${user_home_dir}/${dir_name}/
 
 # Install packages (packages.json)
-RUN npm install -y
+RUN echo "npm install -y" >> ~/.bashrc
