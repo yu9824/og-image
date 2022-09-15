@@ -17,7 +17,7 @@ function getCss(fontSize: string, width: string, textColor: string, textStrongCo
     return `
     @import url('https://fonts.googleapis.com/css?family=M+PLUS+1p');
     @import url('https://cdn.jsdelivr.net/npm/yakuhanjp@3.4.1/dist/css/yakuhanjp_s.min.css');
-    
+
     @font-face {
         font-family: 'MyWebSubsetFont';
         font-style:  normal;
@@ -84,7 +84,7 @@ function getCss(fontSize: string, width: string, textColor: string, textStrongCo
     li {
         text-align: left;
     }
-    
+
     blockquote {
         color: #6a737d;
         padding: 0 12px;
@@ -108,7 +108,7 @@ function getCss(fontSize: string, width: string, textColor: string, textStrongCo
         right: 0;
         margin:  auto;
       }
-      
+
     .logo {
         display: block;
         position: absolute;
@@ -149,9 +149,10 @@ function getCss(fontSize: string, width: string, textColor: string, textStrongCo
         margin: 0 .05em 0 .1em;
         vertical-align: -0.1em;
     }
-    
+
     .heading {
-        font-family: YakuHanJPs, 'MyWebSubsetFont', 'M PLUS 1p', 'Inter', sans-serif;
+        font-family: 'MyWebSubsetFont', YakuHanJPs, 'M PLUS 1p', 'Inter', sans-serif;
+        font-feature-settings: "palt" 1;
         font-size: ${sanitizeHtml(fontSize)};
         font-style: normal;
         color: ${sanitizeHtml(textColor)};
