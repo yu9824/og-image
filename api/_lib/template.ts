@@ -151,8 +151,7 @@ function getCss(fontSize: string, width: string, textColor: string, textStrongCo
     }
 
     .heading {
-        font-family: 'MyWebSubsetFont', YakuHanJPs, 'M PLUS 1p', 'Inter', sans-serif;
-        font-feature-settings: "palt" 1;
+        font-family: YakuHanJPs, 'MyWebSubsetFont', 'M PLUS 1p', 'Inter', sans-serif;
         font-size: ${sanitizeHtml(fontSize)};
         font-style: normal;
         color: ${sanitizeHtml(textColor)};
