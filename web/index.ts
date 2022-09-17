@@ -116,7 +116,7 @@ interface FieldProps {
 const Field = ({ label, input }: FieldProps) => {
     return H('div',
         { className: 'field' },
-        H('label', 
+        H('label',
             H('div', {className: 'field-label'}, label),
             H('div', { className: 'field-value' }, input),
         ),
