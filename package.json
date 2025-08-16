@@ -1,21 +1,26 @@
 {
   "private": true,
   "engines": {
-    "node": "18.x"
+    "node": ">=18.0.0"
   },
   "scripts": {
-    "build": "tsc -p web/tsconfig.json"
+    "build": "tsc -p web/tsconfig.json",
+    "dev": "vercel dev",
+    "deploy": "vercel --prod"
   },
   "dependencies": {
-    "chrome-aws-lambda": "7.0.0",
-    "marked": "4.0.10",
-    "puppeteer-core": "7.0.0",
-    "twemoji": "13.0.1"
+    "@vercel/og": "^0.6.2",
+    "chrome-aws-lambda": "^10.1.0",
+    "marked": "^9.1.6",
+    "puppeteer-core": "^10.1.0",
+    "twemoji": "^15.0.2"
   },
   "devDependencies": {
-    "@types/marked": "4.0.1",
-    "@types/puppeteer": "5.4.4",
-    "@types/puppeteer-core": "5.4.0",
-    "typescript": "4.1.5"
+    "@types/marked": "^5.0.2",
+    "@types/puppeteer": "^7.0.4",
+    "@types/puppeteer-core": "^7.0.4",
+    "@vercel/node": "^3.0.0",
+    "typescript": "^5.3.3",
+    "vercel": "^33.5.4"
   }
 }
