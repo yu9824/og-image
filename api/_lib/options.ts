@@ -1,5 +1,3 @@
-import puppeteer from 'puppeteer-core';
-
 const exePath = process.platform === 'win32'
     ? 'C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe'
     : process.platform === 'linux'
