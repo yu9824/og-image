@@ -10,15 +10,12 @@
   },
   "dependencies": {
     "@vercel/og": "^0.6.2",
-    "chrome-aws-lambda": "^10.1.0",
+    "puppeteer-core": "^24.16.2",
     "marked": "^9.1.6",
-    "puppeteer-core": "^10.1.0",
     "twemoji": "^14.0.2"
   },
   "devDependencies": {
     "@types/marked": "^5.0.2",
-    "@types/puppeteer": "^7.0.4",
-    "@types/puppeteer-core": "^7.0.4",
     "@vercel/node": "^3.0.0",
     "typescript": "^5.3.3",
     "vercel": "^33.5.4"

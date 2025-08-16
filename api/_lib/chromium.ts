@@ -1,15 +1,17 @@
-import core from 'puppeteer-core';
+import puppeteer from 'puppeteer-core';
 import { getOptions } from './options';
 import { FileType } from './types';
-let _page: core.Page | null;
+
+let _page: puppeteer.Page | null;
+let _browser: puppeteer.Browser | null;
 
 async function getPage(isDev: boolean) {
     if (_page) {
         return _page;
     }
     const options = await getOptions(isDev);
-    const browser = await core.launch(options);
-    _page = await browser.newPage();
+    _browser = await puppeteer.launch(options);
+    _page = await _browser.newPage();
     return _page;
 }
 
@@ -19,4 +21,16 @@ export async function getScreenshot(html: string, type: FileType, isDev: boolean
     await page.setContent(html);
     const file = await page.screenshot({ type });
     return file;
+}
+
+// クリーンアップ関数を追加
+export async function cleanup() {
+    if (_page) {
+        await _page.close();
+        _page = null;
+    }
+    if (_browser) {
+        await _browser.close();
+        _browser = null;
+    }
 }
