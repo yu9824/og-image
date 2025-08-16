@@ -9,7 +9,7 @@ const exePath = process.platform === 'win32'
 interface Options {
     args: string[];
     executablePath: string;
-    headless: boolean | 'new';
+    headless: boolean;
 }
 
 export async function getOptions(isDev: boolean) {
@@ -18,7 +18,7 @@ export async function getOptions(isDev: boolean) {
         options = {
             args: [],
             executablePath: exePath,
-            headless: 'new'
+            headless: true
         };
     } else {
         // Vercel環境では@vercel/ogを使用するか、Chromeバイナリを直接指定
@@ -34,7 +34,7 @@ export async function getOptions(isDev: boolean) {
                 '--disable-gpu'
             ],
             executablePath: process.env.CHROME_EXECUTABLE_PATH || exePath,
-            headless: 'new',
+            headless: true,
         };
     }
     return options;

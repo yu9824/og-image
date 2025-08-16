@@ -1,9 +1,9 @@
-import puppeteer from 'puppeteer-core';
+import puppeteer, { Browser, Page } from 'puppeteer-core';
 import { getOptions } from './options';
 import { FileType } from './types';
 
-let _page: puppeteer.Page | null;
-let _browser: puppeteer.Browser | null;
+let _page: Page | null;
+let _browser: Browser | null;
 
 async function getPage(isDev: boolean) {
     if (_page) {
