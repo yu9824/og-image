@@ -15,9 +15,6 @@ const mono = readFileSync(`${__dirname}/../_fonts/Vera-Mono.woff2`).toString('ba
 
 function getCss(fontSize: string, width: string, textColor: string, textStrongColor: string) {
     return `
-    @import url('https://fonts.googleapis.com/css?family=M+PLUS+1p');
-    @import url('https://cdn.jsdelivr.net/npm/yakuhanjp@3.4.1/dist/css/yakuhanjp_s.min.css');
-
     @font-face {
         font-family: 'MyWebSubsetFont';
         font-style:  normal;
@@ -151,7 +148,7 @@ function getCss(fontSize: string, width: string, textColor: string, textStrongCo
     }
 
     .heading {
-        font-family: YakuHanJPs, 'MyWebSubsetFont', 'M PLUS 1p', 'Inter', sans-serif;
+        font-family: 'MyWebSubsetFont', 'Inter', sans-serif;
         font-size: ${sanitizeHtml(fontSize)};
         font-style: normal;
         color: ${sanitizeHtml(textColor)};
@@ -176,28 +173,16 @@ export function getHtml(parsedReq: ParsedRequest) {
     return `<!DOCTYPE html>
 <html>
     <head>
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.3/dist/katex.min.css" integrity="sha384-ThssJ7YtjywV52Gj4JE/1SQEDoMEckXyhkFVwaf4nDSm5OBlXeedVYjuuUd0Yua+" crossorigin="anonymous">
-        <script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.3/dist/katex.min.js" integrity="sha384-Bi8OWqMXO1ta+a4EPkZv7bYGIes7C3krGSZoTGNTAnAn5eYQc7IIXrJ/7ck1drAi" crossorigin="anonymous"></script>
-        <script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.3/dist/contrib/auto-render.min.js" integrity="sha384-vZTG03m+2yp6N6BNi5iM4rW4oIwk5DfcNdFfxkk9ZWpDriOkXX8voJBFrAO7MpVl" crossorigin="anonymous"
-        onload="renderMathInElement(document.body);"></script>
+        <meta charset="utf-8">
+        <title>Generated Image</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+            ${getCss(fontSize, width, textColor, textStrongColor)}
+        </style>
     </head>
-    <meta charset="utf-8">
-    <title>Generated Image</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <style>
-        ${getCss(fontSize, width, textColor, textStrongColor)}
-    </style>
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-        renderMathInElement(document.body, {delimiters: [
-            {left: "\\[", right: "\\]", display: true},
-            {left: "$", right: "$", display: false}
-            ]});
-        });
-    </script>
     <body class="${pattern}">
         <div>
-            ${overlay ? `<img class="overlay" src="${sanitizeHtml(overlay)}">` :""}
+            ${overlay ? `<img class="overlay" src="${sanitizeHtml(overlay)}">` : ""}
             <div class="heading">${emojify(
         md ? marked(text) : sanitizeHtml(text)
     )}
