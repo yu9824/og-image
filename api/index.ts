@@ -10,7 +10,9 @@ export default async function handler(
     res: VercelResponse
 ) {
     try {
+        console.log('Processing request for URL:', req.url);
         const parsedReq = parseRequest(req);
+        console.log('Parsed request:', parsedReq);
         const html = getHtml(parsedReq);
 
         if (isHtmlDebug) {
@@ -27,7 +29,10 @@ export default async function handler(
         res.status(200).send(file);
     } catch (e) {
         console.error('Error generating OG image:', e);
+        console.error('Request URL:', req.url);
+        console.error('Request headers:', req.headers);
+        console.error('Stack trace:', e instanceof Error ? e.stack : 'No stack trace available');
         res.setHeader('Content-Type', 'text/html');
-        res.status(500).send('<h1>Internal Error</h1><p>Sorry, there was a problem</p>');
+        res.status(500).send(`<h1>Internal Error</h1><p>Sorry, there was a problem</p><pre>${e instanceof Error ? e.message : String(e)}</pre>`);
     }
 }

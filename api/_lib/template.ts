@@ -170,6 +170,7 @@ function getCss(fontSize: string, width: string, textColor: string, textStrongCo
 
 export function getHtml(parsedReq: ParsedRequest) {
     const { text, pattern, md, fontSize, width, textColor, textStrongColor, overlay } = parsedReq;
+    console.log('Generating HTML for:', { text, pattern, md, fontSize, width, textColor, textStrongColor, overlay });
     return `<!DOCTYPE html>
 <html>
     <head>
@@ -185,7 +186,7 @@ export function getHtml(parsedReq: ParsedRequest) {
             ${overlay ? `<img class="overlay" src="${sanitizeHtml(overlay)}">` : ""}
             <div class="heading">${emojify(
         md ? marked(text) : sanitizeHtml(text)
-    )}
+    ).replace(/\*\*/g, '<strong>**</strong>')}
             </div>
         </div>
     </body>
