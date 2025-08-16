@@ -1,7 +1,6 @@
 import { ImageResponse } from '@vercel/og';
-import { FileType } from './types';
 
-export async function getScreenshot(html: string, type: FileType, isDev: boolean) {
+export async function getScreenshot(html: string) {
     // @vercel/ogを使用してOG画像を生成
     const response = new ImageResponse(
         {
