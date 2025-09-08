@@ -2,9 +2,21 @@
     "extends": "../api/tsconfig.json",
     "compilerOptions": {
         "module": "esnext",
-        "outDir": "../public/dist"
+        "target": "es2022",
+        "outDir": "../public/dist",
+        "lib": [
+            "dom",
+            "dom.iterable",
+            "esnext"
+        ],
+        "allowJs": true,
+        "declaration": false
     },
     "include": [
         "./"
+    ],
+    "exclude": [
+        "node_modules",
+        "dist"
     ]
 }

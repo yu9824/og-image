@@ -1,22 +1,25 @@
-import core from 'puppeteer-core';
-import { getOptions } from './options';
-import { FileType } from './types';
-let _page: core.Page | null;
+import { ImageResponse } from '@vercel/og';
 
-async function getPage(isDev: boolean) {
-    if (_page) {
-        return _page;
+export async function getScreenshot(html: string) {
+    try {
+        console.log('Creating ImageResponse with HTML length:', html.length);
+        // @vercel/ogを使用してOG画像を生成
+        const response = new ImageResponse(
+            html,
+            {
+                width: 1200,
+                height: 630,
+                status: 200,
+                statusText: 'OK',
+            }
+        );
+
+        console.log('Converting to array buffer...');
+        const arrayBuffer = await response.arrayBuffer();
+        console.log('Converting to Buffer...');
+        return Buffer.from(arrayBuffer);
+    } catch (error) {
+        console.error('Error in getScreenshot:', error);
+        throw error;
     }
-    const options = await getOptions(isDev);
-    const browser = await core.launch(options);
-    _page = await browser.newPage();
-    return _page;
-}
-
-export async function getScreenshot(html: string, type: FileType, isDev: boolean) {
-    const page = await getPage(isDev);
-    await page.setViewport({ width: 1200, height: 630 });
-    await page.setContent(html);
-    const file = await page.screenshot({ type });
-    return file;
 }

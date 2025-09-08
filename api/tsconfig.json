@@ -2,7 +2,7 @@
     "compilerOptions": {
         "outDir": "dist",
         "module": "commonjs",
-        "target": "esnext",
+        "target": "es2022",
         "moduleResolution": "node",
         "jsx": "react",
         "sourceMap": true,
@@ -14,9 +14,17 @@
         "noUnusedParameters": true,
         "removeComments": true,
         "preserveConstEnums": true,
-        "esModuleInterop": true
+        "esModuleInterop": true,
+        "allowSyntheticDefaultImports": true,
+        "skipLibCheck": true,
+        "forceConsistentCasingInFileNames": true,
+        "resolveJsonModule": true
     },
     "include": [
         "./"
+    ],
+    "exclude": [
+        "node_modules",
+        "dist"
     ]
 }

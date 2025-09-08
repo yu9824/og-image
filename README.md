@@ -1,8 +1,37 @@
 # og-image
 [![og-image-example](https://og-image.yu9824.com/**OGP%E7%94%BB%E5%83%8F**%E8%87%AA%E5%8B%95%E7%94%9F%E6%88%90%E3%83%84%E3%83%BC%E3%83%AB.png?pattern=none&md=1&fontSize=50px&width=600px&textColor=%233b3b38&textStrongColor=%2345859c&overlay=https%3A%2F%2Fog-image.yu9824.com%2FOGP_base.png)](https://og-image.yu9824.com/)
 
-## How to build
-You can build on docker container.
+## 🚀 モダンなVercel環境での開発・デプロイ
+
+このプロジェクトは最新のVercel環境に最適化されています。
+
+### 前提条件
+- Node.js 18.0.0以上
+- npm または yarn
+
+### ローカル開発
+```bash
+# 依存関係のインストール
+npm install
+
+# 開発サーバーの起動
+npm run dev
+```
+
+### デプロイ
+```bash
+# Vercel CLIを使用したデプロイ
+npm run deploy
+
+# または直接vercelコマンドを使用
+vercel --prod
+```
+
+### 環境変数
+必要に応じて以下の環境変数を設定してください：
+- `OG_HTML_DEBUG=1` - HTMLデバッグモードを有効化
+
+## 🐳 Docker環境での開発（従来の方法）
 
 ### Build an image
 ```bash
@@ -89,12 +118,4 @@ forked from
 >> 3. Change directory with `cd og-image`
 >> 4. Make changes by swapping out images, changing colors, etc (see [contributing](https://github.com/vercel/og-image/blob/main/CONTRIBUTING.md) for more info)
 >> 5. Remove all configuration inside `vercel.json` besides `rewrites`
->> 6. Run locally with `vercel dev` and visit [localhost:3000](http://localhost:3000)  (if nothing happens, run `npm install -g vercel`)
->> 7. Deploy to the cloud by running `vercel` and you'll get a unique URL
->> 8. Connect [Vercel for GitHub](https://vercel.com/github) to automatically deploy each time you `git push` 🚀
->>
->> ## Authors
->>
->> - Steven ([@styfle](https://twitter.com/styfle)) - [Vercel](https://vercel.com)
->> - Evil Rabbit ([@evilrabbit](https://twitter.com/evilrabbit_)) - [Vercel](https://vercel.com)
->>
+>> 6. Run locally with `vercel dev`
