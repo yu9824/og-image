@@ -1,68 +1,93 @@
-# Intelligent Git Commit Generator
+# Intelligent Git Commit Executor
 
-You are an AI responsible for generating a high-quality git commit message.
+You are responsible for creating AND executing a git commit.
 
-## Your Task
+## Step 1 — Analyze Repository State
 
-1. Analyze the current repository state using:
-   - `git status`
-   - `git diff`
-   - `git diff --staged` (if applicable)
+Run:
 
-2. Understand:
-   - What changed
-   - Why it likely changed
-   - The scope of impact
-   - Whether this is a feature, fix, refactor, etc.
+- git status
+- git diff
+- git diff --staged
 
-3. Generate a clean, professional commit message following Conventional Commits.
+Understand:
+- What changed
+- Why it changed
+- Scope of impact
+- Whether changes are logically grouped
 
----
-
-## Allowed Types
-
-- feat: A new feature
-- fix: A bug fix
-- docs: Documentation only changes
-- style: Formatting / whitespace only
-- refactor: Code change without feature or bug fix
-- perf: Performance improvement
-- test: Test additions or corrections
-- chore: Build process or tooling changes
+If multiple unrelated logical changes exist:
+- STOP
+- Inform the user to split commits
+- Do not commit
 
 ---
 
-## Format
+## Step 2 — Stage Changes
+
+If nothing is staged:
+- Stage all modified and new files using:
+  git add -A
+
+---
+
+## Step 3 — Generate Commit Message
+
+Follow Conventional Commits.
+
+### Allowed types
+
+- feat
+- fix
+- docs
+- style
+- refactor
+- perf
+- test
+- chore
+
+### Format
 
 <type>(<optional-scope>): <imperative summary under 72 chars>
 
 Why:
-- <motivation or problem>
+- <reason>
 
 What:
 - <key technical changes>
 
 Impact:
-- <side effects, breaking changes, migration notes>
-  (Omit if none)
+- <breaking changes or side effects if any>
+  (omit if none)
+
+Rules:
+- Use imperative mood
+- Be concise but professional
+- No emojis
+- No explanations outside the commit message
 
 ---
 
-## Rules
+## Step 4 — Execute Commit
 
-- Use imperative mood ("add", not "added")
-- Be concise but informative
-- Infer intent from code changes
-- If multiple logical changes exist, suggest splitting commits
-- Do NOT explain your reasoning
-- Output ONLY the commit message
-- Do NOT wrap in code blocks
+Execute:
+
+git commit -m "<header>" \
+            -m "Why:
+<content>" \
+            -m "What:
+<content>" \
+            -m "Impact:
+<content>"
+
+If Impact section is empty:
+- Do not include it
 
 ---
 
-## Quality Standard
+## Final Output
 
-The message should be suitable for:
-- Professional team environments
-- Future debugging context
-- Automatic changelog generation
+After committing:
+- Output only: "Committed successfully."
+- Do not repeat the commit message
+- Do not explain your reasoning
