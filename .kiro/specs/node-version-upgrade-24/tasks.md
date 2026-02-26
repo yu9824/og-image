@@ -17,7 +17,7 @@
   - _Requirements: 1.3_
 
 - [ ] 3. 本番用 Chromium 取得を @sparticuz/chromium に差し替える
-- [ ] 3.1 本番時に Chromium 起動オプションを @sparticuz/chromium から返すようにする
+- [x] 3.1 本番時に Chromium 起動オプションを @sparticuz/chromium から返すようにする
   - 開発時は従来どおりローカル Chrome の実行パスとオプションを返す。本番時は @sparticuz/chromium の executablePath（非同期）、args、headless を返す。既存の getOptions の戻り値の型と契約は維持する。呼び出し元（chromium モジュール）は変更しない。
   - _Requirements: 2.1, 2.2, 2.3_
 

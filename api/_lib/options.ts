@@ -9,7 +9,7 @@ const exePath = process.platform === 'win32'
 interface Options {
     args: string[];
     executablePath: string;
-    headless: boolean;
+    headless: boolean | 'shell';
 }
 
 export async function getOptions(isDev: boolean): Promise<Options> {
@@ -23,6 +23,6 @@ export async function getOptions(isDev: boolean): Promise<Options> {
     return {
         args: chromium.args,
         executablePath: await chromium.executablePath(),
-        headless: true,
+        headless: chromium.headless,
     };
 }
