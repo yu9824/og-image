@@ -9,7 +9,7 @@
 ## Core Technologies
 
 - **Language**: TypeScript
-- **Runtime**: Node.js 14.x（package.json engines）
+- **Runtime**: Node.js 24.x（package.json engines）
 - **Headless**: Puppeteer-core + chrome-aws-lambda（本番）、ローカルは OS の Chrome 実行パスを `options.ts` で指定
 - **Deploy**: Vercel（vercel.json の rewrites のみ使用）
 
@@ -42,10 +42,10 @@
 
 ### Required Tools
 
-- Node.js 14.x
+- Node.js 24.x
 - Vercel CLI（`vercel dev` / `vercel`）
 - ローカルプレビュー時: Chrome（options.ts の `exePath`）
-- Docker 利用時: docker と docker 用スクリプト（`docker/build.sh`, `docker/run.sh`）
+- Docker 利用時: Node 24 系ベースイメージを用いた docker と docker 用スクリプト（`docker/build.sh`, `docker/run.sh`）
 
 ### Common Commands
 
@@ -59,7 +59,7 @@ npm run build
 # デプロイ
 vercel
 
-# Docker でビルド・実行
+# Docker でビルド・実行（Node 24 系ベースイメージを使用）
 sh docker/build.sh
 sh docker/run.sh
 ```

@@ -27,7 +27,7 @@ API 中心の小さなリポジトリ。`api/` にサーバーレスエントリ
 
 ### Docker
 **Location**: `/docker/`  
-**Purpose**: イメージビルド・コンテナ実行用の Dockerfile とシェル。本番と同様の環境でローカル検証するときに使う。
+**Purpose**: イメージビルド・コンテナ実行用の Dockerfile とシェル。Node 24 系ベースイメージを用い、本番と同様の環境でローカル検証するときに使う。
 
 ## Naming Conventions
 

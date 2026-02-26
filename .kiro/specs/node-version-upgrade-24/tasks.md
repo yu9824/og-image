@@ -22,7 +22,7 @@
   - _Requirements: 2.1, 2.2, 2.3_
 
 - [ ] 4. (P) 開発・運用ドキュメントの Node バージョン表記を 24 系に合わせる
-- [ ] 4.1 (P) steering のランタイム・必須ツール・Docker 記述を Node 24 に更新する
+- [x] 4.1 (P) steering のランタイム・必須ツール・Docker 記述を Node 24 に更新する
   - Runtime と Required Tools の Node 表記を 24.x に置換する。Docker 利用時は Node 24 系イメージを用いる旨を追記する。
   - _Requirements: 4.1, 4.2, 4.3_
 
