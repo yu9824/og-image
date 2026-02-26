@@ -12,7 +12,7 @@
   - _Requirements: 3.1, 3.2, 3.3_
 
 - [ ] 2. (P) Docker ビルド・実行環境を Node 24 系に更新する
-- [ ] 2.1 (P) Dockerfile のベースイメージを Node 24 系に変更する
+- [x] 2.1 (P) Dockerfile のベースイメージを Node 24 系に変更する
   - FROM を node:24-bookworm-slim 等の Node 24 系に変更する。既存の RUN やユーザー設定が Bookworm 環境で動作するか必要に応じて確認する。
   - _Requirements: 1.3_
 

@@ -1,6 +1,5 @@
 # Base image
-# FROM node:16.13.0-stretch
-FROM node:14.18.2-stretch
+FROM node:24-bookworm-slim
 
 # Set timezone
 ENV TZ="Asia/Tokyo"
