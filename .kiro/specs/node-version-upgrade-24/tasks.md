@@ -6,7 +6,7 @@
 - [x] 1.1 (P) プロジェクトのランタイム指定を Node 24.x に変更する
   - ビルド・実行環境が本番・ローカル・Vercel で一貫して Node 24 となるよう、engines を 24.x に設定する。Vercel は engines を参照するため追加設定は不要。
   - _Requirements: 1.1, 1.2_
-- [ ] 1.2 (P) Node 24 非互換の本番用 Chromium 依存を削除し、互換パッケージに差し替える
+- [x] 1.2 (P) Node 24 非互換の本番用 Chromium 依存を削除し、互換パッケージに差し替える
   - chrome-aws-lambda を削除し、@sparticuz/chromium を追加する。puppeteer-core は Puppeteer Chromium Support に準拠した互換バージョンに更新する。
   - Node 24 環境で npm install が成功することを確認する。
   - _Requirements: 3.1, 3.2, 3.3_

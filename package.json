@@ -7,9 +7,9 @@
     "build": "tsc -p web/tsconfig.json"
   },
   "dependencies": {
-    "chrome-aws-lambda": "7.0.0",
+    "@sparticuz/chromium": "131.0.0",
     "marked": "4.0.10",
-    "puppeteer-core": "7.0.0",
+    "puppeteer-core": "23.10.0",
     "twemoji": "13.0.1"
   },
   "devDependencies": {
