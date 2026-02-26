@@ -3,7 +3,7 @@
 ## Implementation Tasks
 
 - [ ] 1. (P) ランタイムと依存を Node 24 に更新する
-- [ ] 1.1 (P) プロジェクトのランタイム指定を Node 24.x に変更する
+- [x] 1.1 (P) プロジェクトのランタイム指定を Node 24.x に変更する
   - ビルド・実行環境が本番・ローカル・Vercel で一貫して Node 24 となるよう、engines を 24.x に設定する。Vercel は engines を参照するため追加設定は不要。
   - _Requirements: 1.1, 1.2_
 - [ ] 1.2 (P) Node 24 非互換の本番用 Chromium 依存を削除し、互換パッケージに差し替える
