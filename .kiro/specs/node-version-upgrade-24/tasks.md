@@ -27,7 +27,8 @@
   - _Requirements: 4.1, 4.2, 4.3_
 
 - [ ] 5. Node 24 環境での動作を手動で検証する
-- [ ] 5.1 vercel dev でローカル起動し、プレビューと画像生成が成功することを確認する
+- [x] 5.1 vercel dev でローカル起動し、プレビューと画像生成が成功することを確認する
+  - 手順: `npx vercel dev` 起動後、別ターミナルで `./scripts/verify-vercel-dev.sh` を実行。要 `vercel login`。
   - _Requirements: 5.1_
 - [ ] 5.2 Docker でビルド・実行し、画像生成が完了することを確認する
   - _Requirements: 5.2_
