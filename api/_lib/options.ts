@@ -1,4 +1,5 @@
 import chromium from '@sparticuz/chromium';
+import puppeteer from 'puppeteer-core';
 
 const exePath = process.platform === 'win32'
   ? 'C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe'
@@ -9,20 +10,20 @@ const exePath = process.platform === 'win32'
 interface Options {
     args: string[];
     executablePath: string;
-    headless: boolean | 'shell';
+    headless: 'shell';
 }
 
 export async function getOptions(isDev: boolean): Promise<Options> {
     if (isDev) {
         return {
-            args: [],
+            args: puppeteer.defaultArgs({ args: chromium.args, headless: 'shell' }),
             executablePath: exePath,
-            headless: true,
+            headless: 'shell',
         };
     }
     return {
-        args: chromium.args,
+        args: puppeteer.defaultArgs({ args: chromium.args, headless: 'shell' }),
         executablePath: await chromium.executablePath(),
-        headless: chromium.headless,
+        headless: 'shell',
     };
 }
