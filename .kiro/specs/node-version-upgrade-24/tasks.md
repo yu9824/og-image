@@ -30,7 +30,7 @@
 - [x] 5.1 vercel dev でローカル起動し、プレビューと画像生成が成功することを確認する
   - 手順: `npx vercel dev` 起動後、別ターミナルで `./scripts/verify-vercel-dev.sh` を実行。要 `vercel login`。
   - _Requirements: 5.1_
-- [ ] 5.2 Docker でビルド・実行し、画像生成が完了することを確認する
+- [ ] [SKIPPED]5.2 Docker でビルド・実行し、画像生成が完了することを確認する
   - _Requirements: 5.2_
 - [ ] 5.3 本番デプロイ後、Vercel で Node 24 が使用されていることと画像生成レスポンスが正常であることを確認する
   - _Requirements: 5.3_
