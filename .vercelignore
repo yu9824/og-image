@@ -9,7 +9,6 @@ api/dist
 public/dist
 docker
 scripts
-web
 CONTRIBUTING.md
 README.md
 AGENTS.md
