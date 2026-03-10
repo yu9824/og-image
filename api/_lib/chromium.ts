@@ -1,14 +1,16 @@
-import core from 'puppeteer-core';
+import puppeteer from 'puppeteer-core';
+import type { Page } from 'puppeteer-core';
 import { getOptions } from './options';
 import { FileType } from './types';
-let _page: core.Page | null;
 
-async function getPage(isDev: boolean) {
+let _page: Page | null = null;
+
+async function getPage(isDev: boolean): Promise<Page> {
     if (_page) {
         return _page;
     }
     const options = await getOptions(isDev);
-    const browser = await core.launch(options);
+    const browser = await puppeteer.launch(options);
     _page = await browser.newPage();
     return _page;
 }
