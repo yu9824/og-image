@@ -7,7 +7,13 @@ let _page: Page | null = null;
 
 async function getPage(isDev: boolean): Promise<Page> {
     if (_page) {
-        return _page;
+        try {
+            // Verify the page is still usable
+            await _page.evaluate(() => true);
+            return _page;
+        } catch {
+            _page = null;
+        }
     }
     const options = await getOptions(isDev);
     const browser = await puppeteer.launch(options);
