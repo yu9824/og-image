@@ -1,28 +1,43 @@
 # og-image
 [![og-image-example](https://og-image.yu9824.com/**OGP%E7%94%BB%E5%83%8F**%E8%87%AA%E5%8B%95%E7%94%9F%E6%88%90%E3%83%84%E3%83%BC%E3%83%AB.png?pattern=none&md=1&fontSize=50px&width=600px&textColor=%233b3b38&textStrongColor=%2345859c&overlay=https%3A%2F%2Fog-image.yu9824.com%2FOGP_base.png)](https://og-image.yu9824.com/)
 
-## How to build
-You can build on docker container.
+## Development
 
-### Build an image
-```bash
-sh docker/build.sh
-```
-
-### Run a container
-```bash
-sh docker/run.sh
-```
-
-### Debug
+### Start local dev server
 ```bash
 vercel dev
+```
+
+### Debug (returns raw HTML instead of screenshot)
+```bash
+OG_HTML_DEBUG=1 vercel dev
+```
+
+### Build frontend
+```bash
+npm run build  # Compiles web/index.ts → public/dist/
 ```
 
 ### Deploy
 ```bash
 vercel
 ```
+
+## URL Format
+
+```
+/{text}.{png|jpeg}?pattern=cross&fontSize=50px&width=600px&md=1&textColor=...&textStrongColor=...&overlay=...
+```
+
+| Parameter | Default | Description |
+|---|---|---|
+| `pattern` | `cross` | Background pattern: `none`, `cross`, `polka` |
+| `fontSize` | `50px` | Font size |
+| `width` | `600px` | Text area width |
+| `md` | — | Enable markdown rendering (`1` or `true`) |
+| `textColor` | `#000000` | Text color |
+| `textStrongColor` | `#8340BB` | `**bold**` text color |
+| `overlay` | — | Overlay image URL |
 
 forked from
 [detteiu8383/eyemono-og-image](https://github.com/detteiu8383/eyemono-og-image)
