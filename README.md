@@ -1,6 +1,19 @@
 # og-image
 [![og-image-example](https://og-image.yu9824.com/**OGP%E7%94%BB%E5%83%8F**%E8%87%AA%E5%8B%95%E7%94%9F%E6%88%90%E3%83%84%E3%83%BC%E3%83%AB.png?pattern=none&md=1&fontSize=50px&width=600px&textColor=%233b3b38&textStrongColor=%2345859c&overlay=https%3A%2F%2Fog-image.yu9824.com%2FOGP_base.png)](https://og-image.yu9824.com/)
 
+> [!IMPORTANT]
+> **このリポジトリはアーカイブ予定です。後継の [yu9824/og-satori](https://github.com/yu9824/og-satori) をご利用ください。**
+>
+> 機能は [yu9824/og-satori](https://github.com/yu9824/og-satori) へ移植しました。
+>
+> ### 移植した理由
+>
+> 本プロジェクトは headless Chromium / Puppeteer で HTML ページをスクリーンショットして OGP 画像を生成する方式でした。og-satori は Vercel の [satori](https://github.com/vercel/satori) を使い、HTML/CSS から直接 SVG / PNG をレンダリングします。ブラウザを起動しないため、以下の利点があります。
+>
+> - **軽量・高速**: 数十 MB の Chromium バイナリをバンドルする必要がなく、サーバーレス（Vercel）でのコールドスタートが速い
+> - **低コスト・省メモリ**: ブラウザプロセスを起動しないため、実行時のリソース消費が小さい
+> - **保守性**: Puppeteer / `@sparticuz/chromium` などブラウザまわりの依存やバージョン管理が不要で、構成がシンプル
+
 ## Development
 
 ### Start local dev server
